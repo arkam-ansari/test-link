@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Pro | Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <!-- Header Start Here -->
+        <header>
+          <div class="logo">
+            <!-- <img src="logo" alt="Logo" /> -->
+            <h1>Logo</h1>
+          </div>
+          <div class="side-details">
+            <p>
+              Incident Open Action Tracker
+              <span>ICS 233-CG</span>
+            </p>
+          </div>
+        </header>
+        <!-- Header End Here -->
+
+        <!-- List Area Start Here -->
+        <main class="list-area-container">
+          <div class="list-area-wrapper">
+            <div class="list-area-header">
+              <h2>List of Actions <span>(Incident Location - 10)</span></h2>
+              <p>Showing 1 - 4 of 4 Records</p>
+              <div class="form-group">
+                <div class="form-control">
+                  <select name="records" id="records">
+                    <option value="select" selected>10</option>
+                    <option value="select">20</option>
+                    <option value="select">30</option>
+                  </select>
+                </div>
+                <label>Records Per Page</label>
+              </div>
+            </div>
+            <div class="list-container">
+              <p class="no-list-message">No list is available.</p>
+            </div>
+          </div>
+        </main>
+        <!-- List Area End Here -->
+
+        <!-- New Action Start Here -->
+        <footer class="new-action-container">
+          <div class="new-action-wrapper">
+            <div class="new-action-header">
+              <h2>New Actions</h2>
+              <div class="action-btn">
+                <button id="insert-btn">Insert New Line</button>
+                <button>Reorder List</button>
+                <a href="#" class="hide-btn" title="Hide">
+                  Hide <i class="fa-solid fa-arrow-up"></i>
+                </a>
+              </div>
+            </div>
+            <div class="new-action-body">
+              <form>
+                <div class="form-section">
+                  <div class="form-group">
+                    <label>Line no:</label>
+                    <div class="form-control">
+                      <select name="line" id="line" required>
+                        <option value="select" selected>At Last</option>
+                        <option value="select">Middle</option>
+                        <option value="select">First</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Item:</label>
+                    <div class="form-control">
+                      <input type="checkbox" name="item" id="item" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Status:</label>
+                    <div class="form-control">
+                      <select name="status" id="status" required>
+                        <option value="select" selected>--Select--</option>
+                        <option value="pending">Pending</option>
+                        <option value="wip">WIP</option>
+                        <option value="done">Done</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-section">
+                  <div class="form-group">
+                    <label>For/POC:</label>
+                    <div class="form-control">
+                      <input type="text" name="for-poc" id="for-poc" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>POC Briefed:</label>
+                    <div class="form-control">
+                      <input
+                        type="text"
+                        name="poc-brief"
+                        id="poc-brief"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-section date-time">
+                  <div class="form-date">
+                    <div class="form-group">
+                      <label>Start Date:</label>
+                      <div class="form-control">
+                        <input type="text" name="start" id="start-date" />
+                        <i class="fa-solid fa-calendar-days"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Target Date:</label>
+                      <div class="form-control">
+                        <input type="text" name="start" id="target-date" />
+                        <i class="fa-solid fa-calendar-days"></i>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Actual Date:</label>
+                      <div class="form-control">
+                        <input type="text" name="start" id="actual-date" />
+                        <i class="fa-solid fa-calendar-days"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-hrs">
+                    <div class="form-group">
+                      <label>Hr:</label>
+                      <div class="form-control">
+                        <select name="start-hr" id="start-hr">
+                          <option value="select" selected>18</option>
+                          <option value="select">20</option>
+                          <option value="select">24</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Hr:</label>
+                      <div class="form-control">
+                        <select name="target-hr" id="target-hr">
+                          <option value="select" selected>18</option>
+                          <option value="select">20</option>
+                          <option value="select">24</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Hr:</label>
+                      <div class="form-control">
+                        <select name="actual-hr" id="actual-hr">
+                          <option value="select" selected>18</option>
+                          <option value="select">20</option>
+                          <option value="select">24</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-min">
+                    <div class="form-group">
+                      <label>Min:</label>
+                      <div class="form-control">
+                        <select name="start-min" id="start-min">
+                          <option value="select" selected>36</option>
+                          <option value="select">42</option>
+                          <option value="select">60</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Min:</label>
+                      <div class="form-control">
+                        <select name="target-min" id="target-min">
+                          <option value="select" selected>36</option>
+                          <option value="select">42</option>
+                          <option value="select">60</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Min:</label>
+                      <div class="form-control">
+                        <select name="actual-min" id="actual-min">
+                          <option value="select" selected>36</option>
+                          <option value="select">42</option>
+                          <option value="select">60</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </footer>
+        <div class="control-btn">
+          <button class="show-action-btn" title="Show Acion">
+            Show Action <i class="fa-solid fa-arrow-down"></i>
+          </button>
+          <div class="form-action-btn">
+            <button class="save-btn">Save</button>
+            <button class="save-exit-btn">Save & Exit</button>
+            <button class="cancel-btn">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <!-- New Action End Here -->
+      <div class="modal hidden">
+        <p>Are you sure you want to change the status to DONE?</p>
+        <button id="yes-btn">YES</button>
+        <button id="no-btn">NO</button>
+      </div>
+      <div class="waiting-modal">
+        <div class="loading-animation"></div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #383838;
+  background-color: #459f0b;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.container {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 97%;
+  margin: 0 auto;
+  padding: 2% 0 5%;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Header Start Here */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 2% 10px;
+  background-color: #d8dbdb;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.side-details {
+  color: #253437;
+  font-size: 21px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 29px;
+  text-align: right;
+}
+
+.side-details span {
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+}
+/* Header End Here */
+
+/* List Action Start Here */
+.list-area-container {
+  background-color: #fff;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  margin-bottom: 15px;
+}
+
+.list-area-wrapper {
+  padding: 15px 2% 10px;
+}
+
+/* .list-area-header {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.list-item-header,
+.list-area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-area-header p,
+.list-item span {
+  margin-right: 7%;
+}
+
+.list-area-header .form-group {
+  margin: 0;
+}
+
+.list-area-header .form-group label {
+  margin-left: 5px;
+}
+
+.list-area-container h2 {
+  color: #459f0b;
+  font-size: 20px;
+  line-height: 43px;
+}
+
+.list-area-container span {
+  color: #909090;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.list-container {
+  width: 100%;
+  margin: 20px 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.list-item {
+  width: 49%;
+  border: 1px solid #b4b4b4;
+  padding: 7px 2% 7px 1%;
+  border-radius: 5px;
+}
+
+.list-controls .edit-btn {
+  margin-right: 7px;
+}
+
+/* Transition effect on delete */
+.list-item.delete {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.list-item h3 {
+  color: #459f0b;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.list-item p {
+  padding-left: 2%;
+  color: #383838;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.no-list-message {
+  display: none;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 25px;
+}
+/* List Action End Here */
+
+/* New Action Start Here */
+.new-action-container {
+  display: block;
+  background-color: #fff;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+
+.new-action-wrapper {
+  padding: 15px 2% 10px;
+}
+
+.new-action-container h2 {
+  color: #459f0b;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.new-action-body {
+  padding: 20px 0 15px;
+}
+
+.new-action-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-btn button {
+  padding: 5px 7%;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 0 20px;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+form .form-group label {
+  width: 110px;
+}
+
+form .form-group select,
+form .form-group input[type="text"] {
+  width: 150px;
+}
+
+.date-time {
+  display: flex;
+  width: 50%;
+}
+
+.form-date .form-group label,
+.form-date .form-group input[type="text"]{
+  width: 90px;
+}
+
+.form-hrs .form-group label,
+.form-min .form-group label {
+  width: auto;
+  margin-right: 5px;
+}
+.form-hrs .form-group select,
+.form-min .form-group select {
+  width: 40px;
+}
+
+.form-hrs {
+  margin: 0 5%;
+}
+
+.form-date {
+  margin-left: 65px;
+}
+
+.form-date i {
+  font-size: 16px;
+}
+
+.hide-btn i,
+.show-action-btn i {
+  color: #459f0b;
+  margin-left: 3px;
+}
+
+.action-btn button,
+.control-btn button {
+  border: 1px solid #9b9b9b;
+  border-radius: 7px;
+  border: 1px solid #bfbfbf;
+  background-color: #3e3e3e;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+.control-btn {
+  text-align: right;
+  margin-right: 2%;
+}
+
+.control-btn button {
+  padding: 5px 2%;
+}
+
+.control-btn .show-action-btn {
+  display: none;
+  margin-left: auto;
+  color: #3e3e3e;
+  background-color: #fff;
+}
+
+.control-btn button:nth-of-type(2),
+.control-btn button:nth-of-type(3) {
+  margin-left: 1%;
+}
+
+/* Define the keyframes for the animation */
+@keyframes hideAnimation {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* Apply the animation to an element with the class "hide-element" */
+.hide-element {
+  animation: hideAnimation 1s ease-in-out;
+}
+
+/* Define the keyframes for the show animation */
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+/* Apply the show animation to an element with the class "show-element" */
+.show-element {
+  animation: showAnimation 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal,
+.waiting-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.modal button {
+  margin-right: 10px;
+}
+
+.waiting-modal {
+  width: 25%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waiting-modal p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.loading-animation {
+  width: 50px;
+  height: 50px;
+  background: url("./assests/bigrotation2.gif ") center center no-repeat;
+  background-size: cover;
+}

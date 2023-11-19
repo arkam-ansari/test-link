@@ -217,7 +217,6 @@ header {
 form {
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   gap: 0 7%;
 }
 
@@ -241,7 +240,7 @@ form .form-group input[type="text"] {
 }
 
 .form-date .form-group label,
-.form-date .form-group input[type="text"],
+.form-date .form-group input[type="date"],
 .form-hrs .form-group select,
 .form-min .form-group select {
   width: 90px;
@@ -259,6 +258,10 @@ form .form-group input[type="text"] {
 
 .form-date {
   margin-left: 65px;
+}
+
+.form-date .form-group input[type="date"] {
+  border: 1px solid #767676;
 }
 
 .form-date i {
@@ -423,7 +426,6 @@ form .form-group input[type="text"] {
   }
 
   .form-date .form-group label,
-  .form-date .form-group input[type="text"],
   .form-hrs .form-group select,
   .form-min .form-group select {
     width: 75px;
@@ -433,6 +435,9 @@ form .form-group input[type="text"] {
   }
   .form-date {
     margin-left: 0;
+  }
+  .date-time {
+    margin-top: 25px;
   }
   .action-btn {
     width: 32%;
@@ -447,6 +452,11 @@ form .form-group input[type="text"] {
 
   .date-time {
     margin-top: 25px;
+  }
+
+  
+  .form-date .form-group input[type="date"] {
+    width: 75px;
   }
 
   .form-date .form-control {
@@ -474,6 +484,9 @@ form .form-group input[type="text"] {
   .list-area-footer {
     display: none;
   }
+  .list-item span {
+    margin-right: 5%;
+  }
   .new-action-header {
     flex-direction: column;
   }
@@ -483,9 +496,6 @@ form .form-group input[type="text"] {
   }
   .form-date .form-control {
     width: 80px;
-  }
-  .form-date .form-group input[type=text] {
-    width: 60px;
   }
   .form-hrs .form-group select,
   .form-min .form-group select {

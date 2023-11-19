@@ -39,6 +39,7 @@ let listData = [
 const listContainer = document.querySelector(".list-item-container");
 listData.forEach(function (item, i) {
   insertData(item, i);
+  resetForm();
 });
 
 // Insert Data in list area
@@ -154,7 +155,6 @@ function toggleModal() {
 
 // On clicking 'yes' on modal functionality
 yesBtn.addEventListener("click", function () {
-  console.log("Status changed to DONE");
   toggleModal();
 });
 
@@ -176,6 +176,7 @@ saveBtn.addEventListener("click", function (event) {
 
   // After 2 seconds, hide the waiting modal and redirect
   setTimeout(function () {
+    resetForm();
     waitingModal.style.display = "none";
     window.location.href = "./thank-you/index.html";
   }, 2000);

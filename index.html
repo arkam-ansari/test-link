@@ -90,7 +90,7 @@
               </div>
             </div>
             <div class="new-action-body">
-              <form>
+              <form id="list-form">
                 <div class="form-section">
                   <div class="form-group">
                     <label>Line no:</label>
@@ -122,13 +122,13 @@
                 </div>
                 <div class="form-section">
                   <div class="form-group">
-                    <label>For/POC:</label>
+                    <label>For/POC<span>*</span> :</label>
                     <div class="form-control">
                       <input type="text" name="for-poc" id="for-poc" required />
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>POC Briefed:</label>
+                    <label>POC Briefed<span>*</span> :</label>
                     <div class="form-control">
                       <input
                         type="text"
@@ -142,21 +142,21 @@
                 <div class="form-section date-time">
                   <div class="form-date">
                     <div class="form-group">
-                      <label>Start Date:</label>
+                      <label>Start Date<span>*</span> :</label>
                       <div class="form-control">
                         <input type="text" name="start" id="start-date" />
                         <i class="fa-solid fa-calendar-days"></i>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>Target Date:</label>
+                      <label>Target Date<span>*</span> :</label>
                       <div class="form-control">
                         <input type="text" name="start" id="target-date" />
                         <i class="fa-solid fa-calendar-days"></i>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label>Actual Date:</label>
+                      <label>Actual Date<span>*</span> :</label>
                       <div class="form-control">
                         <input type="text" name="start" id="actual-date" />
                         <i class="fa-solid fa-calendar-days"></i>
@@ -239,7 +239,7 @@
           <div class="form-action-btn">
             <button class="save-btn" title="Save">Save</button>
             <button class="save-exit-btn" title="Save & Exit">Save & Exit</button>
-            <button class="cancel-btn" title="Cancel">Cancel</button>
+            <button class="cancel-btn" title="Cancel" onclick="resetForm()">Cancel</button>
           </div>
         </div>
         <!-- New Action End Here -->

@@ -104,9 +104,7 @@ const showBtn = document.querySelector(".show-action-btn");
 const newActionContainer = document.querySelector(".new-action-container");
 const formActionBtn = document.querySelector(".form-action-btn");
 
-hideBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  // hide new action section
+function hideContent() {
   newActionContainer.style.display = "none";
   formActionBtn.style.display = "none";
   newActionContainer.classList.add("hide-element");
@@ -114,6 +112,12 @@ hideBtn.addEventListener("click", (event) => {
   // show action button
   showBtn.classList.add("show-element");
   showBtn.style.display = "block";
+}
+
+hideBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  // hide new action section
+  hideContent();
 });
 
 // Show Action Button Functionality
@@ -177,6 +181,35 @@ saveBtn.addEventListener("click", function (event) {
   }, 2000);
 });
 
+// Form Validation
+function validateForm() {
+  let forPoc = document.getElementById("for-poc").value;
+  let pocBrief = document.getElementById("poc-brief").value;
+  let startDate = document.getElementById("start-date").value;
+  let targetDate = document.getElementById("target-date").value;
+  let actualDate = document.getElementById("actual-date").value;
+
+  if (
+    forPoc.trim() === "" ||
+    pocBrief.trim() === "" ||
+    startDate.trim() === "" ||
+    targetDate.trim() === "" ||
+    actualDate.trim() === ""
+  ) {
+    alert("Please fill out all required fields.");
+    return false; // Prevent form submission
+  }
+  // If validation passes form will sumbit
+  return true;
+}
+
+// Reset the form functionality
+function resetForm() {
+  const form = document.getElementById("list-form");
+  // Reset the form
+  form.reset();
+}
+
 // Insert Button Functionality
 const insertBtn = document.getElementById("insert-btn");
 insertBtn.addEventListener("click", function () {
@@ -189,7 +222,15 @@ insertBtn.addEventListener("click", function () {
     targetDate: document.getElementById("target-date").value,
     actualDate: document.getElementById("actual-date").value,
   };
-  insertData(newData, listCounts.length);
-  handleOnDelete();
-  checkList();
+  if (validateForm()) {
+    insertData(newData, listCounts.length);
+    handleOnDelete();
+    checkList();
+  } 
 });
+
+// Save & Exit Functionality 
+const saveExitBtn = document.querySelector(".save-exit-btn");
+saveExitBtn.addEventListener("click",function (){
+  hideContent();
+})

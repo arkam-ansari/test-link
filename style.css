@@ -96,6 +96,11 @@ header {
   margin-left: 5px;
 }
 
+.form-section label span {
+  color: red;
+  font-weight: bolder;
+}
+
 .list-area-footer .pagination {
   display: flex;
   list-style-type: none;
@@ -486,7 +491,11 @@ form .form-group input[type="text"] {
   .form-min .form-group select {
     width: 40px;
   }
+  .modal {
+    width: 75%;
+  }
   .waiting-modal {
     width: 50%;
   }
 }
+/* Media Query End From Here */

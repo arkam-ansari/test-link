@@ -39,7 +39,6 @@ let listData = [
 const listContainer = document.querySelector(".list-item-container");
 listData.forEach(function (item, i) {
   insertData(item, i);
-  resetForm();
 });
 
 // Insert Data in list area
@@ -69,6 +68,7 @@ function insertData(data, index) {
   </div>
     `;
   listContainer.innerHTML += content;
+  resetForm();
 }
 // Handle Delete Functionality of List
 function handleOnDelete() {

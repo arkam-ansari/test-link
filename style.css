@@ -212,6 +212,7 @@ header {
 form {
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
   gap: 0 7%;
 }
 
@@ -332,11 +333,9 @@ form .form-group input[type="text"] {
 .show-element {
   animation: showAnimation 1s ease-in-out;
 }
+/* New Action End Here */
 
-.hidden {
-  display: none;
-}
-
+/* Modal Style Start Here  */
 .modal,
 .waiting-modal {
   position: fixed;
@@ -377,6 +376,10 @@ form .form-group input[type="text"] {
   margin-bottom: 15px;
 }
 
+.hidden {
+  display: none;
+}
+
 .waiting-modal {
   width: 25%;
   display: none;
@@ -396,4 +399,94 @@ form .form-group input[type="text"] {
   height: 50px;
   background: url("./assests/bigrotation2.gif ") center center no-repeat;
   background-size: cover;
+}
+/* Modal Style End Here  */
+
+/* Media Query Start From Here */
+@media only screen and (max-width: 1342px) {
+  .list-item {
+    width: 48%;
+  }
+
+  form .form-group label {
+    width: 90px;
+  }
+
+  form .form-group select,
+  form .form-group input[type="text"] {
+    width: 100px;
+  }
+
+  .form-date .form-group label,
+  .form-date .form-group input[type="text"],
+  .form-hrs .form-group select,
+  .form-min .form-group select {
+    width: 75px;
+  }
+  form {
+    flex-wrap: wrap;
+  }
+  .form-date {
+    margin-left: 0;
+  }
+  .action-btn {
+    width: 32%;
+  }
+}
+
+/* Media Query For Tablet Devices */
+@media only screen and (max-width: 768px) {
+  .action-btn {
+    width: 45%;
+  }
+
+  .date-time {
+    margin-top: 25px;
+  }
+
+  .form-date .form-control {
+    width: 110px;
+  }
+}
+
+/* Media Query For Mobile Devices */
+@media only screen and (max-width: 425px) {
+  .side-details {
+    font-size: 14px;
+  }
+  .side-details span {
+    font-size: 11px;
+  }
+  .list-item {
+    width: 100%;
+  }
+  .list-area-container h2 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .list-area-header p,
+  .list-area-header .form-group,
+  .list-area-footer {
+    display: none;
+  }
+  .new-action-header {
+    flex-direction: column;
+  }
+  .action-btn {
+    margin-top: 15px;
+    width: 100%;
+  }
+  .form-date .form-control {
+    width: 80px;
+  }
+  .form-date .form-group input[type=text] {
+    width: 60px;
+  }
+  .form-hrs .form-group select,
+  .form-min .form-group select {
+    width: 40px;
+  }
+  .waiting-modal {
+    width: 50%;
+  }
 }

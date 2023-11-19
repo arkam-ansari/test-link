@@ -69,29 +69,46 @@ header {
   padding: 15px 2% 10px;
 }
 
-/* .list-area-header {
-  display: flex;
-  justify-content: space-between;
-} */
-
 .list-item-header,
-.list-area-header {
+.list-area-header,
+.list-area-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #383838;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .list-area-header p,
 .list-item span {
-  margin-right: 7%;
+  margin-right: 8%;
 }
 
-.list-area-header .form-group {
+.list-area-header .form-group,
+.list-area-footer .form-group {
   margin: 0;
 }
 
-.list-area-header .form-group label {
+.list-area-header .form-group label,
+.list-area-footer .form-group label {
   margin-left: 5px;
+}
+
+.list-area-footer .pagination {
+  display: flex;
+  list-style-type: none;
+}
+
+.list-area-footer .pagination li {
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+.list-area-footer .pagination li:nth-of-type(2) {
+  background-color: #459f0b;
+  color: #fff;
 }
 
 .list-area-container h2 {
@@ -106,9 +123,9 @@ header {
   line-height: 25px;
 }
 
-.list-container {
+.list-item-container {
   width: 100%;
-  margin: 20px 0 10px;
+  margin: 20px 0 45px;
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
@@ -148,7 +165,7 @@ header {
 
 .no-list-message {
   display: none;
-  margin: 0 auto;
+  margin: 25px auto 0;
   font-size: 18px;
   line-height: 25px;
 }
@@ -195,7 +212,7 @@ header {
 form {
   display: flex;
   flex-direction: row;
-  gap: 0 20px;
+  gap: 0 7%;
 }
 
 .form-group {
@@ -218,7 +235,9 @@ form .form-group input[type="text"] {
 }
 
 .form-date .form-group label,
-.form-date .form-group input[type="text"]{
+.form-date .form-group input[type="text"],
+.form-hrs .form-group select,
+.form-min .form-group select {
   width: 90px;
 }
 
@@ -226,10 +245,6 @@ form .form-group input[type="text"] {
 .form-min .form-group label {
   width: auto;
   margin-right: 5px;
-}
-.form-hrs .form-group select,
-.form-min .form-group select {
-  width: 40px;
 }
 
 .form-hrs {
@@ -251,7 +266,8 @@ form .form-group input[type="text"] {
 }
 
 .action-btn button,
-.control-btn button {
+.control-btn button,
+.modal button {
   border: 1px solid #9b9b9b;
   border-radius: 7px;
   border: 1px solid #bfbfbf;
@@ -327,7 +343,7 @@ form .form-group input[type="text"] {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 50%;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -346,8 +362,19 @@ form .form-group input[type="text"] {
   z-index: 5;
 }
 
+.modal {
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+}
+
 .modal button {
   margin-right: 10px;
+  padding: 5px 5%;
+}
+
+.modal p {
+  margin-bottom: 15px;
 }
 
 .waiting-modal {

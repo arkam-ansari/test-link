@@ -36,7 +36,7 @@ let listData = [
 ];
 
 // Display the list dynamically
-const listContainer = document.querySelector(".list-container")
+const listContainer = document.querySelector(".list-item-container");
 listData.forEach(function (item, i) {
   insertData(item, i);
 });
@@ -70,34 +70,35 @@ function insertData(data, index) {
   listContainer.innerHTML += content;
 }
 // Handle Delete Functionality of List
-const listItems = document.querySelectorAll(".list-item");
-const deleteBtns = document.querySelectorAll(".delete-btn");
-listItems.forEach(function (item, i) {
-  deleteBtns[i].addEventListener("click", (event) => {
-    event.preventDefault();
-    // listData = listData.filter((currentData, index) => i !== index);
-    let currentList = event.target.closest(".list-item");
-    if (currentList) {
-      currentList.classList.add("delete");
-      setTimeout(function () {
-        currentList.remove();
-        checkList();
-      }, 300);
-    }
+function handleOnDelete() {
+  const deleteBtns = document.querySelectorAll(".delete-btn");
+  deleteBtns.forEach(function (deleteBtn, i) {
+    deleteBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      let currentList = event.target.closest(".list-item");
+      if (currentList) {
+        currentList.classList.add("delete");
+        setTimeout(function () {
+          currentList.remove();
+          checkList();
+        }, 300);
+      }
+    });
   });
-});
-
+}
+handleOnDelete();
 // Check the list and display no list messsage
 function checkList() {
   const listCounts = document.querySelectorAll(".list-item");
   const listMessage = document.querySelector(".no-list-message");
   if (listCounts.length === 0) {
     listMessage.style.display = "block";
+  } else {
+    listMessage.style.display = "none";
   }
 }
 
-
-// Hide Button Functionality 
+// Hide Button Functionality
 const hideBtn = document.querySelector(".hide-btn");
 const showBtn = document.querySelector(".show-action-btn");
 const newActionContainer = document.querySelector(".new-action-container");
@@ -115,7 +116,7 @@ hideBtn.addEventListener("click", (event) => {
   showBtn.style.display = "block";
 });
 
-// Show Action Button Functionality 
+// Show Action Button Functionality
 showBtn.addEventListener("click", (event) => {
   // show new action section
   newActionContainer.style.display = "block";
@@ -147,7 +148,7 @@ function toggleModal() {
   overlay.classList.toggle("hidden");
 }
 
-// On clicking 'yes' on modal functionality 
+// On clicking 'yes' on modal functionality
 yesBtn.addEventListener("click", function () {
   console.log("Status changed to DONE");
   toggleModal();
@@ -189,4 +190,6 @@ insertBtn.addEventListener("click", function () {
     actualDate: document.getElementById("actual-date").value,
   };
   insertData(newData, listCounts.length);
+  handleOnDelete();
+  checkList();
 });

@@ -48,8 +48,29 @@
                 <label>Records Per Page</label>
               </div>
             </div>
-            <div class="list-container">
+            <div class="list-item-container">
               <p class="no-list-message">No list is available.</p>
+            </div>
+            <div class="list-area-footer">
+              <ul class="pagination">
+                <li>Page</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+              </ul>
+              <p>Showing 1 - 4 of 4 Records</p>
+              <div class="form-group">
+                <div class="form-control">
+                  <select name="records" id="records">
+                    <option value="select" selected>10</option>
+                    <option value="select">20</option>
+                    <option value="select">30</option>
+                  </select>
+                </div>
+                <label>Records Per Page</label>
+              </div>
             </div>
           </div>
         </main>
@@ -61,8 +82,8 @@
             <div class="new-action-header">
               <h2>New Actions</h2>
               <div class="action-btn">
-                <button id="insert-btn">Insert New Line</button>
-                <button>Reorder List</button>
+                <button id="insert-btn" title="Insert New Line">Insert New Line</button>
+                <button title="Reorder List">Reorder List</button>
                 <a href="#" class="hide-btn" title="Hide">
                   Hide <i class="fa-solid fa-arrow-up"></i>
                 </a>
@@ -216,17 +237,21 @@
             Show Action <i class="fa-solid fa-arrow-down"></i>
           </button>
           <div class="form-action-btn">
-            <button class="save-btn">Save</button>
-            <button class="save-exit-btn">Save & Exit</button>
-            <button class="cancel-btn">Cancel</button>
+            <button class="save-btn" title="Save">Save</button>
+            <button class="save-exit-btn" title="Save & Exit">Save & Exit</button>
+            <button class="cancel-btn" title="Cancel">Cancel</button>
           </div>
         </div>
+        <!-- New Action End Here -->
       </div>
-      <!-- New Action End Here -->
+
+      <!-- Modals Start From Here -->
       <div class="modal hidden">
         <p>Are you sure you want to change the status to DONE?</p>
-        <button id="yes-btn">YES</button>
-        <button id="no-btn">NO</button>
+        <div class="modal-option">
+          <button id="yes-btn" title="Yes">YES</button>
+          <button id="no-btn" title="No">NO</button>
+        </div>
       </div>
       <div class="waiting-modal">
         <div class="loading-animation"></div>
@@ -234,6 +259,7 @@
       </div>
     </div>
     <div class="overlay hidden"></div>
+    <!-- Modals End From Here -->
     <script src="./script.js"></script>
   </body>
 </html>
